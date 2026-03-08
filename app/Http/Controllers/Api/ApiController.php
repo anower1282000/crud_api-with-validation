@@ -43,15 +43,7 @@ class ApiController extends Controller
     public function show(string $id)
     {
         $product = Product::findOrFail($id);
-
-        if(!$product)
-        {
-            return response()->json([
-                'success'=>false,
-                'message'=>'product not found',
-            ],404);
-        }
-
+        
         return response()->json([
             'success'=>true,
             'message'=>'product details retrived successfully',
